@@ -1,8 +1,5 @@
 apply plugin: 'com.android.application'
 
-Properties props = new Properties()
-props.load(new FileInputStream(file(rootProject.file("signing.properties"))))
-
 android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
