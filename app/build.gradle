@@ -27,5 +27,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile rootProject.ext.jjdxm_v7
     compile project(':umeng-update')
-    compile 'com.dou361.base64:jjdxm-base64:1.0.0'
 }

@@ -43,7 +43,7 @@ public class UpdateConfig {
         UpdateHelper.init(context);
         UpdateHelper.getInstance()
                 // 可填：请求方式
-                .setMethod(RequestType.post)
+                .setMethod(RequestType.get)
                 // 必填：数据更新接口，该方法一定要在setDialogLayout的前面,因为这方法里面做了重置DialogLayout的操作
                 .setCheckUrl(checkUrl)
                 // 可填：自定义更新弹出的dialog的布局样式，主要案例中的布局样式里面的id为（jjdxm_update_content、jjdxm_update_id_ok、jjdxm_update_id_cancel）的view类型和id不能修改，其他的都可以修改或删除
@@ -98,11 +98,7 @@ public class UpdateConfig {
         params.put("Nonce", Integer.valueOf((new Random()).nextInt(2147483647)));
         params.put("Timestamp", Long.valueOf(System.currentTimeMillis() / 1000L));
         params.put("RequestClient", "SDK_JAVA_1.0");
-        try {
-            params.put("Signature", Sign.sign(Sign.makeSignPlainText(params, "POST"), "FDC9BC1AA4B387CEBBF0F9355CEC2086"));
-        } catch (Exception var9) {
-            var9.printStackTrace();
-        }
+
         UpdateHelper.getInstance()
                 // 可填：请求方式
                 .setMethod(RequestType.post)
